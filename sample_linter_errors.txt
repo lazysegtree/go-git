@@ -1,0 +1,1487 @@
+➜  ~/Workspace/kuknitin/go-git git:(golangci_lint) ✗ [9:02:22] golangci-lint run
+internal/path_util/path_util.go:1:9: var-naming: don't use an underscore in package name (revive)
+package path_util
+        ^
+internal/transport/test/receive_pack.go:155:22: Error return value of `req.Capabilities.Set` is not checked (errcheck)
+	req.Capabilities.Set(capability.ReportStatus)
+	                    ^
+internal/transport/test/receive_pack.go:192:22: Error return value of `req.Capabilities.Set` is not checked (errcheck)
+	req.Capabilities.Set(capability.ReportStatus)
+	                    ^
+internal/transport/test/receive_pack.go:206:22: Error return value of `req.Capabilities.Set` is not checked (errcheck)
+	req.Capabilities.Set(capability.ReportStatus)
+	                    ^
+internal/transport/test/receive_pack.go:333:23: Error return value of `req.Capabilities.Set` is not checked (errcheck)
+		req.Capabilities.Set(capability.ReportStatus)
+		                    ^
+internal/transport/test/receive_pack.go:356:23: Error return value of `req.Capabilities.Set` is not checked (errcheck)
+		req.Capabilities.Set(capability.ReportStatus)
+		                    ^
+internal/transport/test/upload_pack.go:189:22: Error return value of `req.Capabilities.Set` is not checked (errcheck)
+	req.Capabilities.Set(capability.Sideband)
+	                    ^
+internal/transport/test/upload_pack.go:190:22: Error return value of `req.Capabilities.Set` is not checked (errcheck)
+	req.Capabilities.Set(capability.Sideband64k)
+	                    ^
+internal/transport/test/receive_pack.go:127:2: redefines-builtin-id: redefinition of the built-in function close (revive)
+	ctx, close := context.WithCancel(context.TODO())
+	^
+internal/transport/test/receive_pack.go:240:10: shadow: declaration of "err" shadows declaration at line 236 (govet)
+		files, err := os.ReadDir(objectPath)
+		       ^
+internal/transport/test/receive_pack.go:37:17: error-nil: use s.NoError (testifylint)
+	defer func() { s.Nil(r.Close()) }()
+	               ^
+internal/transport/test/receive_pack.go:50:2: error-nil: use s.NoError (testifylint)
+	s.Nil(r.Close())
+	^
+internal/transport/test/receive_pack.go:62:2: error-nil: use s.NoError (testifylint)
+	s.Nil(r.Close())
+	^
+internal/transport/test/receive_pack.go:67:17: error-nil: use s.NoError (testifylint)
+	defer func() { s.Nil(r.Close()) }()
+	               ^
+internal/transport/test/receive_pack.go:80:17: error-nil: use s.NoError (testifylint)
+	defer func() { s.Nil(r.Close()) }()
+	               ^
+internal/transport/test/receive_pack.go:92:17: error-nil: use s.NoError (testifylint)
+	defer func() { s.Nil(r.Close()) }()
+	               ^
+internal/transport/test/receive_pack.go:121:17: error-nil: use s.NoError (testifylint)
+	defer func() { s.Nil(r.Close()) }()
+	               ^
+internal/transport/test/receive_pack.go:131:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+internal/transport/test/receive_pack.go:211:2: regexp: remove unnecessary regexp.MustCompile (testifylint)
+	s.Regexp(regexp.MustCompile(".*(failed to update ref|failed to lock).*"), err)
+	^
+internal/transport/test/receive_pack.go:215:2: regexp: remove unnecessary regexp.MustCompile (testifylint)
+	s.Regexp(regexp.MustCompile("(failed to update ref|failed to lock)"), report.CommandStatuses[0].Status)
+	^
+internal/transport/test/receive_pack.go:302:17: error-nil: use s.NoError (testifylint)
+	defer func() { s.Nil(r.Close()) }()
+	               ^
+internal/transport/test/receive_pack.go:304:2: formatter: remove unnecessary fmt.Sprintf (testifylint)
+	s.NoError(err, fmt.Sprintf("endpoint: %s", ep.String()))
+	^
+internal/transport/test/receive_pack.go:336:2: error-nil: use s.NoError (testifylint)
+	s.Nil(r.Close())
+	^
+internal/transport/test/receive_pack.go:363:2: error-nil: use s.NoError (testifylint)
+	s.Nil(r.Close())
+	^
+internal/transport/test/upload_pack.go:132:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+internal/transport/test/upload_pack.go:156:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+internal/transport/test/upload_pack.go:193:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+internal/transport/test/upload_pack.go:248:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+internal/transport/test/receive_pack.go:91:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/receive_pack.go:95:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/upload_pack.go:104:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/upload_pack.go:111:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/upload_pack.go:121:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/upload_pack.go:125:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/receive_pack.go:321:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/receive_pack.go:326:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/receive_pack.go:68:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+internal/transport/test/receive_pack.go:70:2: require-error: for error assertions use require (testifylint)
+	s.NoError(err)
+	^
+plumbing/format/commitgraph/v2/encoder.go:198:21: unnecessary conversion (unconvert)
+		unixTime |= uint64(commitData.Generation) << 34
+		                  ^
+plumbing/format/commitgraph/v2/file.go:299:24: unnecessary conversion (unconvert)
+		generationV2 = uint64(genAndTime & 0x3FFFFFFFF)
+		                     ^
+plumbing/format/commitgraph/v2/chunk.go:14:5: chunkSignatures is a global variable (gochecknoglobals)
+var chunkSignatures = []byte("OIDFOIDLCDATGDA2GDO2EDGEBIDXBDATBASE\000\000\000\000")
+    ^
+plumbing/format/commitgraph/v2/file.go:28:2: commitFileSignature is a global variable (gochecknoglobals)
+	commitFileSignature = []byte{'C', 'G', 'P', 'H'}
+	^
+plumbing/format/commitgraph/v2/file.go:30:2: parentNone is a global variable (gochecknoglobals)
+	parentNone        = uint32(0x70000000)
+	^
+plumbing/format/commitgraph/v2/file.go:31:2: parentOctopusUsed is a global variable (gochecknoglobals)
+	parentOctopusUsed = uint32(0x80000000)
+	^
+plumbing/format/commitgraph/v2/file.go:32:2: parentOctopusMask is a global variable (gochecknoglobals)
+	parentOctopusMask = uint32(0x7fffffff)
+	^
+plumbing/format/commitgraph/v2/file.go:33:2: parentLast is a global variable (gochecknoglobals)
+	parentLast        = uint32(0x80000000)
+	^
+plumbing/format/commitgraph/v2/encoder.go:172:3: ifElseChain: rewrite if-else to switch statement (gocritic)
+		if len(commitData.ParentHashes) == 0 {
+		^
+plumbing/format/commitgraph/v2/file.go:206:3: ifElseChain: rewrite if-else to switch statement (gocritic)
+		if cmp < 0 {
+		^
+plumbing/format/commitgraph/v2/file.go:265:2: ifElseChain: rewrite if-else to switch statement (gocritic)
+	if parent2&parentOctopusUsed == parentOctopusUsed {
+	^
+plumbing/format/commitgraph/v2/file.go:272:7: shadow: declaration of "err" shadows declaration at line 247 (govet)
+			_, err := fi.reader.ReadAt(buf, offset)
+			   ^
+plumbing/format/commitgraph/v2/memory.go:56:2: shadow: declaration of "commitData" shadows declaration at line 17 (govet)
+	commitData := mi.commitData[i]
+	^
+plumbing/format/commitgraph/v2/encoder.go:110:2: naked return in func `prepare` with 29 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/encoder.go:121:2: naked return in func `encodeFileHeader` with 9 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/encoder.go:132:4: naked return in func `encodeChunkHeaders` with 16 lines of code (nakedret)
+			return
+			^
+plumbing/format/commitgraph/v2/encoder.go:139:2: naked return in func `encodeChunkHeaders` with 16 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/encoder.go:145:4: naked return in func `encodeFanout` with 7 lines of code (nakedret)
+			return
+			^
+plumbing/format/commitgraph/v2/encoder.go:148:2: naked return in func `encodeFanout` with 7 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/encoder.go:157:2: naked return in func `encodeOidLookup` with 7 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/encoder.go:168:4: naked return in func `encodeCommitData` with 47 lines of code (nakedret)
+			return
+			^
+plumbing/format/commitgraph/v2/encoder.go:194:4: naked return in func `encodeCommitData` with 47 lines of code (nakedret)
+			return
+			^
+plumbing/format/commitgraph/v2/encoder.go:200:4: naked return in func `encodeCommitData` with 47 lines of code (nakedret)
+			return
+			^
+plumbing/format/commitgraph/v2/encoder.go:206:2: naked return in func `encodeCommitData` with 47 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/encoder.go:212:4: naked return in func `encodeExtraEdges` with 7 lines of code (nakedret)
+			return
+			^
+plumbing/format/commitgraph/v2/encoder.go:215:2: naked return in func `encodeExtraEdges` with 7 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/encoder.go:241:4: naked return in func `encodeGenerationV2Overflow` with 7 lines of code (nakedret)
+			return
+			^
+plumbing/format/commitgraph/v2/encoder.go:244:2: naked return in func `encodeGenerationV2Overflow` with 7 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/file.go:110:2: naked return in func `Close` with 12 lines of code (nakedret)
+	return
+	^
+plumbing/format/commitgraph/v2/commitgraph_test.go:185:16: shadow: declaration of "err" shadows declaration at line 177 (govet)
+			commitData, err := index.GetCommitDataByIndex(uint32(i))
+			            ^
+plumbing/format/commitgraph/v2/commitgraph_test.go:48:2: empty: use s.Empty (testifylint)
+	s.Len(commitData.ParentIndexes, 0)
+	^
+plumbing/format/commitgraph/v2/commitgraph_test.go:49:2: empty: use s.Empty (testifylint)
+	s.Len(commitData.ParentHashes, 0)
+	^
+plumbing/transport/ssh/common.go:291:7: Error return value is not checked (errcheck)
+	*c = vc.Interface().(ssh.ClientConfig)
+	     ^
+plumbing/transport/ssh/common.go:190:3: var-naming: var proxyUrl should be proxyURL (revive)
+		proxyUrl, err := proxyOpts.FullURL()
+		^
+plumbing/transport/ssh/proxy_test.go:80:52: unused-parameter: parameter 'req' seems to be unused, consider removing or renaming it as _ (revive)
+func (dr TestProxyRule) Allow(ctx context.Context, req *socks5.Request) (context.Context, bool) {
+                                                   ^
+plumbing/transport/ssh/auth_method_test.go:41:31: func `mockKnownHostsWithCert.host` is unused (unused)
+func (mockKnownHostsWithCert) host() string { return "github.com" }
+                              ^
+plumbing/transport/ssh/upload_pack_test.go:90:6: func `handlerSSH` is unused (unused)
+func handlerSSH(s ssh.Session) {
+     ^
+plumbing/transport/ssh/upload_pack_test.go:127:6: func `buildCommand` is unused (unused)
+func buildCommand(c []string) (cmd *exec.Cmd, stdin io.WriteCloser, stderr, stdout io.ReadCloser, err error) {
+     ^
+plumbing/transport/ssh/common.go:25:5: DefaultClient is a global variable (gochecknoglobals)
+var DefaultClient = NewClient(nil)
+    ^
+plumbing/transport/ssh/common.go:29:5: DefaultSSHConfig is a global variable (gochecknoglobals)
+var DefaultSSHConfig sshConfig = ssh_config.DefaultUserSettings
+    ^
+plumbing/transport/ssh/common.go:42:5: DefaultAuthBuilder is a global variable (gochecknoglobals)
+var DefaultAuthBuilder = func(user string) (AuthMethod, error) {
+    ^
+plumbing/transport/ssh/proxy_test.go:24:5: socksProxiedRequests is a global variable (gochecknoglobals)
+var socksProxiedRequests int32
+    ^
+plumbing/transport/ssh/common.go:20:1: don't use `init` function (gochecknoinits)
+func init() {
+^
+plumbing/transport/ssh/common_test.go:99:21: copylocks: assignment copies lock value to uploadPack.Suite: github.com/stretchr/testify/suite.Suite contains sync.RWMutex (govet)
+	uploadPack.Suite = s.Suite
+	                   ^
+plumbing/transport/ssh/common_test.go:121:21: copylocks: assignment copies lock value to uploadPack.Suite: github.com/stretchr/testify/suite.Suite contains sync.RWMutex (govet)
+	uploadPack.Suite = s.Suite
+	                   ^
+plumbing/transport/ssh/common_test.go:141:21: copylocks: assignment copies lock value to uploadPack.Suite: github.com/stretchr/testify/suite.Suite contains sync.RWMutex (govet)
+	uploadPack.Suite = s.Suite
+	                   ^
+plumbing/transport/ssh/common_test.go:155:21: copylocks: assignment copies lock value to uploadPack.Suite: github.com/stretchr/testify/suite.Suite contains sync.RWMutex (govet)
+	uploadPack.Suite = s.Suite
+	                   ^
+plumbing/transport/ssh/common.go:134:7: shadow: declaration of "err" shadows declaration at line 127 (govet)
+		db, err := newKnownHostsDb()
+		    ^
+plumbing/transport/ssh/common.go:145:7: shadow: declaration of "err" shadows declaration at line 127 (govet)
+		db, err := newKnownHostsDb()
+		    ^
+plumbing/transport/ssh/auth_method_test.go:151:3: shadow: declaration of "err" shadows declaration at line 147 (govet)
+		err := os.Setenv("SSH_AUTH_SOCK", addr)
+		^
+plumbing/transport/ssh/auth_method_test.go:234:8: shadow: declaration of "err" shadows declaration at line 210 (govet)
+			var err error
+			    ^
+plumbing/transport/ssh/proxy_test.go:67:2: shadow: declaration of "runner" shadows declaration at line 49 (govet)
+	runner := runner{
+	^
+plumbing/transport/ssh/common.go:238:3: naked return in func `doGetHostWithPortFromSSHConfig` with 27 lines of code (nakedret)
+		return
+		^
+plumbing/transport/ssh/common.go:251:3: naked return in func `doGetHostWithPortFromSSHConfig` with 27 lines of code (nakedret)
+		return
+		^
+plumbing/transport/ssh/common.go:262:2: naked return in func `doGetHostWithPortFromSSHConfig` with 27 lines of code (nakedret)
+	return
+	^
+plumbing/transport/ssh/upload_pack_test.go:130:3: naked return in func `buildCommand` with 26 lines of code (nakedret)
+		return
+		^
+plumbing/transport/ssh/upload_pack_test.go:139:3: naked return in func `buildCommand` with 26 lines of code (nakedret)
+		return
+		^
+plumbing/transport/ssh/upload_pack_test.go:144:3: naked return in func `buildCommand` with 26 lines of code (nakedret)
+		return
+		^
+plumbing/transport/ssh/upload_pack_test.go:149:3: naked return in func `buildCommand` with 26 lines of code (nakedret)
+		return
+		^
+plumbing/transport/ssh/upload_pack_test.go:152:2: naked return in func `buildCommand` with 26 lines of code (nakedret)
+	return
+	^
+plumbing/transport/ssh/auth_method.go:298:15: fmt.Errorf can be replaced with errors.New (perfsprint)
+		return nil, fmt.Errorf("unable to find any valid known_hosts file, set SSH_KNOWN_HOSTS env variable")
+		            ^
+plumbing/transport/ssh/upload_pack_test.go:129:9: fmt.Errorf can be replaced with errors.New (perfsprint)
+		err = fmt.Errorf("invalid command")
+		      ^
+plumbing/transport/ssh/auth_method.go:248:6: ST1003: func newKnownHostsDb should be newKnownHostsDB (stylecheck)
+func newKnownHostsDb(files ...string) (*knownhosts.HostKeyDB, error) {
+     ^
+plumbing/format/gitattributes/dir.go:71:11: appendAssign: append result not assigned to the same slice (gocritic)
+		path := append(root, p)
+		        ^
+plumbing/format/gitattributes/dir.go:69:4: assignOp: replace `p = p + string(filepath.Separator)` with `p += string(filepath.Separator)` (gocritic)
+			p = p + string(filepath.Separator)
+			^
+plumbing/format/gitattributes/dir_test.go:33:6: shadow: declaration of "err" shadows declaration at line 29 (govet)
+		f, err := fs.Create(filename)
+		   ^
+plumbing/format/gitattributes/attributes.go:119:3: naked return in func `ParseAttributesLine` with 53 lines of code (nakedret)
+		return
+		^
+plumbing/format/gitattributes/attributes.go:132:3: naked return in func `ParseAttributesLine` with 53 lines of code (nakedret)
+		return
+		^
+plumbing/format/gitattributes/attributes.go:167:2: naked return in func `ParseAttributesLine` with 53 lines of code (nakedret)
+	return
+	^
+plumbing/format/gitattributes/dir.go:46:3: naked return in func `ReadPatterns` with 8 lines of code (nakedret)
+		return
+		^
+plumbing/format/gitattributes/dir.go:86:2: naked return in func `walkDirectory` with 34 lines of code (nakedret)
+	return
+	^
+plumbing/format/gitattributes/dir.go:122:3: naked return in func `LoadGlobalPatterns` with 7 lines of code (nakedret)
+		return
+		^
+plumbing/format/gitattributes/matcher.go:50:4: naked return in func `Match` with 25 lines of code (nakedret)
+			return
+			^
+plumbing/format/gitattributes/matcher.go:68:2: naked return in func `Match` with 25 lines of code (nakedret)
+	return
+	^
+plumbing/format/gitattributes/dir_test.go:175:2: empty: use s.Empty (testifylint)
+	s.Len(ps, 0)
+	^
+plumbing/format/gitattributes/dir_test.go:181:2: empty: use s.Empty (testifylint)
+	s.Len(ps, 0)
+	^
+plumbing/format/gitattributes/dir_test.go:187:2: empty: use s.Empty (testifylint)
+	s.Len(ps, 0)
+	^
+plumbing/format/objfile/reader_test.go:34:108: unused-parameter: parameter 'com' seems to be unused, consider removing or renaming it as _ (revive)
+func testReader(t *testing.T, source io.Reader, hash plumbing.Hash, o plumbing.ObjectType, content []byte, com string) {
+                                                                                                           ^
+plumbing/format/objfile/common_test.go:16:5: objfileFixtures is a global variable (gochecknoglobals)
+var objfileFixtures = []objfileFixture{
+    ^
+plumbing/format/objfile/reader.go:47:3: naked return in func `Header` with 25 lines of code (nakedret)
+		return
+		^
+plumbing/format/objfile/reader.go:52:3: naked return in func `Header` with 25 lines of code (nakedret)
+		return
+		^
+plumbing/format/objfile/reader.go:57:3: naked return in func `Header` with 25 lines of code (nakedret)
+		return
+		^
+plumbing/format/objfile/reader.go:63:3: naked return in func `Header` with 25 lines of code (nakedret)
+		return
+		^
+plumbing/format/objfile/reader.go:67:2: naked return in func `Header` with 25 lines of code (nakedret)
+	return
+	^
+plumbing/format/objfile/writer.go:90:3: naked return in func `Write` with 19 lines of code (nakedret)
+		return
+		^
+plumbing/format/objfile/writer.go:93:2: naked return in func `Write` with 19 lines of code (nakedret)
+	return
+	^
+plumbing/format/objfile/reader_test.go:45:2: formatter: remove unnecessary fmt.Sprintf (testifylint)
+	assert.Equal(t, content, rc, fmt.Sprintf("content=%s, expected=%s", base64.StdEncoding.EncodeToString(rc), base64.StdEncoding.EncodeToString(content)))
+	^
+plumbing/format/objfile/reader_test.go:55:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+plumbing/format/objfile/reader_test.go:61:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+plumbing/format/objfile/reader_test.go:71:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+plumbing/format/pktline/sync.go:18:9: Error return value is not checked (errcheck)
+	buf := pktBuffer.Get().(*[MaxSize]byte)
+	       ^
+plumbing/format/pktline/error.go:27:6: the error type name `ErrorLine` should conform to the `XxxError` format (errname)
+type ErrorLine struct {
+     ^
+plumbing/format/pktline/common.go:46:2: flushPkt is a global variable (gochecknoglobals)
+	flushPkt = []byte{'0', '0', '0', '0'}
+	^
+plumbing/format/pktline/common.go:49:2: delimPkt is a global variable (gochecknoglobals)
+	delimPkt = []byte{'0', '0', '0', '1'}
+	^
+plumbing/format/pktline/common.go:52:2: responseEndPkt is a global variable (gochecknoglobals)
+	responseEndPkt = []byte{'0', '0', '0', '2'}
+	^
+plumbing/format/pktline/common.go:55:2: emptyPkt is a global variable (gochecknoglobals)
+	emptyPkt = []byte{'0', '0', '0', '4'}
+	^
+plumbing/format/pktline/error.go:16:2: errPrefix is a global variable (gochecknoglobals)
+	errPrefix = []byte("ERR ")
+	^
+plumbing/format/pktline/sync.go:5:5: pktBuffer is a global variable (gochecknoglobals)
+var pktBuffer = sync.Pool{
+    ^
+plumbing/format/pktline/pktline.go:35:3: naked return in func `Write` with 28 lines of code (nakedret)
+		return
+		^
+plumbing/format/pktline/pktline.go:40:2: naked return in func `Write` with 28 lines of code (nakedret)
+	return
+	^
+plumbing/protocol/packp/ulreq.go:86:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.MultiACKDetailed)
+		                  ^
+plumbing/protocol/packp/ulreq.go:88:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.MultiACK)
+		                  ^
+plumbing/protocol/packp/ulreq.go:92:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.Sideband64k)
+		                  ^
+plumbing/protocol/packp/ulreq.go:94:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.Sideband)
+		                  ^
+plumbing/protocol/packp/ulreq.go:98:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.ThinPack)
+		                  ^
+plumbing/protocol/packp/ulreq.go:102:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.OFSDelta)
+		                  ^
+plumbing/protocol/packp/ulreq.go:106:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.Agent, capability.DefaultAgent())
+		                  ^
+plumbing/protocol/packp/updreq.go:66:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.Agent, capability.DefaultAgent())
+		                  ^
+plumbing/protocol/packp/updreq.go:70:21: Error return value of `r.Capabilities.Set` is not checked (errcheck)
+		r.Capabilities.Set(capability.ReportStatus)
+		                  ^
+plumbing/protocol/packp/updreq_encode.go:50:2: var-naming: var objId should be objID (revive)
+	objId := []byte(h.String())
+	^
+plumbing/protocol/packp/uppackreq_test.go:21:2: redefines-builtin-id: redefinition of the built-in function cap (revive)
+	cap := capability.NewList()
+	^
+plumbing/protocol/packp/srvresp.go:26:51: unused-parameter: parameter 'isMultiACK' seems to be unused, consider removing or renaming it as _ (revive)
+func (r *ServerResponse) Decode(reader io.Reader, isMultiACK bool) error {
+                                                  ^
+plumbing/protocol/packp/ulreq_test.go:21:2: redefines-builtin-id: redefinition of the built-in function cap (revive)
+	cap := capability.NewList()
+	^
+plumbing/protocol/packp/uppackresp_test.go:165:14: unused-parameter: parameter 't' seems to be unused, consider removing or renaming it as _ (revive)
+	f.Fuzz(func(t *testing.T, input []byte) {
+	            ^
+plumbing/protocol/packp/updreq_test.go:19:2: redefines-builtin-id: redefinition of the built-in function cap (revive)
+	cap := capability.NewList()
+	^
+plumbing/protocol/packp/updreq_decode.go:57:6: var-naming: func errInvalidShallowObjId should be errInvalidShallowObjID (revive)
+func errInvalidShallowObjId(err error) error {
+     ^
+plumbing/protocol/packp/updreq_encode.go:56:19: redefines-builtin-id: redefinition of the built-in function cap (revive)
+	cmds []*Command, cap *capability.List,
+	                 ^
+plumbing/protocol/packp/updreq_test.go:34:2: redefines-builtin-id: redefinition of the built-in function cap (revive)
+	cap = capability.NewList()
+	^
+plumbing/protocol/packp/updreq_decode.go:62:6: var-naming: func errInvalidOldObjId should be errInvalidOldObjID (revive)
+func errInvalidOldObjId(err error) error {
+     ^
+plumbing/protocol/packp/updreq_test.go:40:2: redefines-builtin-id: redefinition of the built-in function cap (revive)
+	cap = capability.NewList()
+	^
+plumbing/protocol/packp/updreq_decode.go:67:6: var-naming: func errInvalidNewObjId should be errInvalidNewObjID (revive)
+func errInvalidNewObjId(err error) error {
+     ^
+plumbing/protocol/packp/common.go:59:6: the error type name `ErrUnexpectedData` should conform to the `XxxError` format (errname)
+type ErrUnexpectedData struct {
+     ^
+plumbing/protocol/packp/common.go:20:2: sp is a global variable (gochecknoglobals)
+	sp  = []byte(" ")
+	^
+plumbing/protocol/packp/common.go:21:2: eol is a global variable (gochecknoglobals)
+	eol = []byte("\n")
+	^
+plumbing/protocol/packp/common.go:24:2: null is a global variable (gochecknoglobals)
+	null       = []byte("\x00")
+	^
+plumbing/protocol/packp/common.go:25:2: peeled is a global variable (gochecknoglobals)
+	peeled     = []byte("^{}")
+	^
+plumbing/protocol/packp/common.go:26:2: noHeadMark is a global variable (gochecknoglobals)
+	noHeadMark = []byte(" capabilities^{}\x00")
+	^
+plumbing/protocol/packp/common.go:29:2: want is a global variable (gochecknoglobals)
+	want            = []byte("want ")
+	^
+plumbing/protocol/packp/common.go:30:2: shallow is a global variable (gochecknoglobals)
+	shallow         = []byte("shallow ")
+	^
+plumbing/protocol/packp/common.go:31:2: deepen is a global variable (gochecknoglobals)
+	deepen          = []byte("deepen")
+	^
+plumbing/protocol/packp/common.go:32:2: deepenCommits is a global variable (gochecknoglobals)
+	deepenCommits   = []byte("deepen ")
+	^
+plumbing/protocol/packp/common.go:33:2: deepenSince is a global variable (gochecknoglobals)
+	deepenSince     = []byte("deepen-since ")
+	^
+plumbing/protocol/packp/common.go:34:2: deepenReference is a global variable (gochecknoglobals)
+	deepenReference = []byte("deepen-not ")
+	^
+plumbing/protocol/packp/common.go:35:2: have is a global variable (gochecknoglobals)
+	have            = []byte("have ")
+	^
+plumbing/protocol/packp/common.go:36:2: done is a global variable (gochecknoglobals)
+	done            = []byte("done")
+	^
+plumbing/protocol/packp/common.go:39:2: unshallow is a global variable (gochecknoglobals)
+	unshallow = []byte("unshallow ")
+	^
+plumbing/protocol/packp/common.go:42:2: ack is a global variable (gochecknoglobals)
+	ack = []byte("ACK")
+	^
+plumbing/protocol/packp/common.go:43:2: nak is a global variable (gochecknoglobals)
+	nak = []byte("NAK")
+	^
+plumbing/protocol/packp/common.go:46:2: shallowNoSp is a global variable (gochecknoglobals)
+	shallowNoSp = []byte("shallow")
+	^
+plumbing/protocol/packp/updreq_decode.go:15:2: shallowLineLength is a global variable (gochecknoglobals)
+	shallowLineLength       = len(shallow) + hashSize
+	^
+plumbing/protocol/packp/updreq_decode.go:16:2: minCommandLength is a global variable (gochecknoglobals)
+	minCommandLength        = hashSize*2 + 2 + 1
+	^
+plumbing/protocol/packp/updreq_decode.go:17:2: minCommandAndCapsLength is a global variable (gochecknoglobals)
+	minCommandAndCapsLength = minCommandLength + 1
+	^
+plumbing/protocol/packp/srvresp.go:134:17: commentFormatting: put a space between `//` and comment text (gocritic)
+		if multiAck { //multi_ack
+		              ^
+plumbing/protocol/packp/srvresp.go:151:32: commentFormatting: put a space between `//` and comment text (gocritic)
+		} else if multiAckDetailed { //multi_ack_detailed
+		                             ^
+plumbing/protocol/packp/srvresp_test.go:216:36: commentFormatting: put a space between `//` and comment text (gocritic)
+			Acks: []UploadPackRequestAck{}, //no common hash
+			                                ^
+plumbing/protocol/packp/advrefs_decode.go:57:1: printf-like formatting function 'error' should be named 'errorf' (goprintffuncname)
+func (d *advRefsDecoder) error(format string, a ...interface{}) {
+^
+plumbing/protocol/packp/ulreq_decode.go:50:1: printf-like formatting function 'error' should be named 'errorf' (goprintffuncname)
+func (d *ulReqDecoder) error(format string, a ...interface{}) {
+^
+plumbing/protocol/packp/shallowupd.go:48:9: nilness: tautological condition: non-nil != nil (govet)
+	if err != nil && err != io.EOF {
+	       ^
+plumbing/protocol/packp/advrefs.go:114:7: shadow: declaration of "err" shadows declaration at line 110 (govet)
+		ok, err := a.createHeadIfCorrectReference(ref, s)
+		    ^
+plumbing/protocol/packp/report_status.go:68:5: shadow: declaration of "err" shadows declaration at line 63 (govet)
+	if err := s.decodeReportStatus(b); err != nil {
+	   ^
+plumbing/protocol/packp/report_status.go:85:6: shadow: declaration of "err" shadows declaration at line 63 (govet)
+		if err := s.decodeCommandStatus(b); err != nil {
+		   ^
+plumbing/protocol/packp/srvresp.go:37:6: shadow: declaration of "err" shadows declaration at line 29 (govet)
+		if err := r.decodeLine(p); err != nil {
+		   ^
+plumbing/protocol/packp/srvresp.go:44:9: shadow: declaration of "err" shadows declaration at line 29 (govet)
+		stop, err := r.stopReading(s)
+		      ^
+plumbing/protocol/packp/uppackresp.go:77:6: shadow: declaration of "err" shadows declaration at line 75 (govet)
+		if err := r.ShallowUpdate.Encode(w); err != nil {
+		   ^
+plumbing/protocol/packp/uppackresp.go:82:5: shadow: declaration of "err" shadows declaration at line 75 (govet)
+	if err := r.ServerResponse.Encode(w); err != nil {
+	   ^
+plumbing/protocol/packp/uppackresp_test.go:90:21: avoid allocations with bytes.NewBufferString (mirror)
+	pf := io.NopCloser(bytes.NewBuffer([]byte("[PACK]")))
+	                   ^
+plumbing/protocol/packp/uppackresp_test.go:110:21: avoid allocations with bytes.NewBufferString (mirror)
+	pf := io.NopCloser(bytes.NewBuffer([]byte("PACK")))
+	                   ^
+plumbing/protocol/packp/uppackresp_test.go:132:21: avoid allocations with bytes.NewBufferString (mirror)
+	pf := io.NopCloser(bytes.NewBuffer([]byte("[PACK]")))
+	                   ^
+plumbing/protocol/packp/advrefs.go:194:4: error is not nil (line 193) but it returns nil (nilerr)
+			return nil
+			^
+plumbing/protocol/packp/advrefs_decode.go:250:33: fmt.Errorf can be replaced with errors.New (perfsprint)
+		return "", plumbing.ZeroHash, fmt.Errorf("malformed ref data: no space was found")
+		                              ^
+plumbing/protocol/packp/advrefs_decode.go:252:33: fmt.Errorf can be replaced with errors.New (perfsprint)
+		return "", plumbing.ZeroHash, fmt.Errorf("malformed ref data: more than one space found")
+		                              ^
+plumbing/protocol/packp/common.go:55:17: fmt.Errorf can be replaced with errors.New (perfsprint)
+	ErrNilWriter = fmt.Errorf("nil writer")
+	               ^
+plumbing/protocol/packp/gitproto.go:14:33: fmt.Errorf can be replaced with errors.New (perfsprint)
+var ErrInvalidGitProtoRequest = fmt.Errorf("invalid git protocol request")
+                                ^
+plumbing/protocol/packp/report_status.go:91:10: fmt.Errorf can be replaced with errors.New (perfsprint)
+		return fmt.Errorf("missing flush")
+		       ^
+plumbing/protocol/packp/report_status.go:115:10: fmt.Errorf can be replaced with errors.New (perfsprint)
+		return fmt.Errorf("premature flush")
+		       ^
+plumbing/protocol/packp/srvresp.go:97:10: fmt.Errorf can be replaced with errors.New (perfsprint)
+		return fmt.Errorf("unexpected flush")
+		       ^
+plumbing/protocol/packp/ulreq.go:122:10: fmt.Errorf can be replaced with errors.New (perfsprint)
+		return fmt.Errorf("want can't be empty")
+		       ^
+plumbing/protocol/packp/ulreq_decode.go:17:31: ST1016: methods on the same type should have the same receiver name (seen 1x "r", 1x "req") (stylecheck)
+func (req *UploadPackRequest) Decode(r io.Reader) error {
+                              ^
+plumbing/protocol/packp/advrefs_decode_test.go:61:3: regexp: remove unnecessary regexp.MustCompile (testifylint)
+		s.Regexp(regexp.MustCompile(pattern), err.Error())
+		^
+plumbing/protocol/packp/advrefs_decode_test.go:247:4: formatter: remove unnecessary fmt.Sprintf (testifylint)
+			s.True(ar.Capabilities.Supports(fixCap.Name),
+			^
+plumbing/protocol/packp/advrefs_decode_test.go:249:4: formatter: remove unnecessary fmt.Sprintf (testifylint)
+			s.Equal(fixCap.Values, ar.Capabilities.Get(fixCap.Name),
+			^
+plumbing/protocol/packp/advrefs_encode_test.go:238:2: regexp: remove unnecessary regexp.MustCompile (testifylint)
+	s.Regexp(regexp.MustCompile(".*payload is too long.*"), err)
+	^
+plumbing/protocol/packp/advrefs_test.go:81:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+plumbing/protocol/packp/advrefs_test.go:136:2: error-nil: use s.Error (testifylint)
+	s.NotNil(err)
+	^
+plumbing/protocol/packp/common_test.go:34:4: error-nil: use assert.NoError (testifylint)
+			assert.Nil(t, pktline.WriteFlush(&buf))
+			^
+plumbing/protocol/packp/report_status_test.go:26:2: regexp: remove unnecessary regexp.MustCompile (testifylint)
+	s.Regexp(regexp.MustCompile("unpack error: OK"), rs.Error())
+	^
+plumbing/protocol/packp/report_status_test.go:28:2: regexp: remove unnecessary regexp.MustCompile (testifylint)
+	s.Regexp(regexp.MustCompile("unpack error: "), rs.Error())
+	^
+plumbing/protocol/packp/report_status_test.go:37:2: regexp: remove unnecessary regexp.MustCompile (testifylint)
+	s.Regexp(regexp.MustCompile("command error on ref: OK"), rs.Error())
+	^
+plumbing/protocol/packp/report_status_test.go:39:2: regexp: remove unnecessary regexp.MustCompile (testifylint)
+	s.Regexp(regexp.MustCompile("command error on ref: "), rs.Error())
+	^
+plumbing/protocol/packp/report_status_test.go:57:2: regexp: remove unnecessary regexp.MustCompile (testifylint)
+	s.Regexp(regexp.MustCompile(errorMatch), rs.Decode(r))
+	^
+plumbing/protocol/packp/shallowupd_test.go:31:2: empty: use s.Empty (testifylint)
+	s.Len(su.Unshallows, 0)
+	^
+plumbing/transport/file/client.go:149:20: Error return value of `c.cmd.Process.Kill` is not checked (errcheck)
+	c.cmd.Process.Kill()
+	                  ^
+plumbing/transport/file/client.go:80:62: unused-parameter: parameter 'auth' seems to be unused, consider removing or renaming it as _ (revive)
+func (r *runner) Command(cmd string, ep *transport.Endpoint, auth transport.AuthMethod,
+                                                             ^
+plumbing/transport/file/client.go:22:5: DefaultClient is a global variable (gochecknoglobals)
+var DefaultClient = NewClient(
+    ^
+plumbing/transport/file/server.go:48:5: srvCmd is a global variable (gochecknoglobals)
+var srvCmd = server.ServerCommand{
+    ^
+plumbing/transport/file/client.go:17:1: don't use `init` function (gochecknoinits)
+func init() {
+^
+plumbing/format/pktline/pktline_read_test.go:349:22: `sectionsExample` - `nSections` always receives `2` (unparam)
+func sectionsExample(nSections, nLines int) (*bytes.Buffer, error) {
+                     ^
+utils/ioutil/common_test.go:63:2: redefines-builtin-id: redefinition of the built-in function close (revive)
+	ctx, close := context.WithCancel(context.Background())
+	^
+utils/ioutil/common_test.go:80:2: redefines-builtin-id: redefinition of the built-in function close (revive)
+	ctx, close := context.WithCancel(context.Background())
+	^
+utils/ioutil/common_test.go:99:2: redefines-builtin-id: redefinition of the built-in function close (revive)
+	ctx, close := context.WithCancel(context.Background())
+	^
+utils/ioutil/common_test.go:115:2: redefines-builtin-id: redefinition of the built-in function close (revive)
+	ctx, close := context.WithCancel(context.Background())
+	^
+utils/ioutil/context.go:37:57: unexported-return: exported func NewContextWriter returns unexported type *ioutil.ctxWriter, which can be annoying to use (revive)
+func NewContextWriter(ctx context.Context, w io.Writer) *ctxWriter {
+                                                        ^
+utils/ioutil/context.go:88:57: unexported-return: exported func NewContextReader returns unexported type *ioutil.ctxReader, which can be annoying to use (revive)
+func NewContextReader(ctx context.Context, r io.Reader) *ctxReader {
+                                                        ^
+utils/ioutil/common_test.go:134:2: redefines-builtin-id: redefinition of the built-in function close (revive)
+	ctx, close := context.WithCancel(context.Background())
+	^
+utils/ioutil/common_test.go:149:2: redefines-builtin-id: redefinition of the built-in function close (revive)
+	ctx, close := context.WithCancel(context.Background())
+	^
+utils/ioutil/context.go:115:85: unexported-return: exported func NewContextReaderWithCloser returns unexported type *ioutil.ctxReader, which can be annoying to use (revive)
+func NewContextReaderWithCloser(ctx context.Context, r io.Reader, closer io.Closer) *ctxReader {
+                                                                                    ^
+utils/ioutil/context_test.go:63:5: S1030: should use buf.String() instead of string(buf.Bytes()) (gosimple)
+	if string(buf.Bytes()) != string("abc") {
+	   ^
+utils/ioutil/context_test.go:75:5: S1030: should use buf.String() instead of string(buf.Bytes()) (gosimple)
+	if string(buf.Bytes()) != string("abcdef") {
+	   ^
+utils/ioutil/common_test.go:38:9: avoid allocations with bytes.NewBufferString (mirror)
+	buf := bytes.NewBuffer([]byte("1"))
+	       ^
+utils/ioutil/common_test.go:49:9: avoid allocations with bytes.NewBufferString (mirror)
+	buf := bytes.NewBuffer([]byte("1"))
+	       ^
+utils/ioutil/common_test.go:62:9: avoid allocations with bytes.NewBufferString (mirror)
+	buf := bytes.NewBuffer([]byte("12"))
+	       ^
+utils/ioutil/common_test.go:79:23: avoid allocations with bytes.NewBufferString (mirror)
+	buf := NewReadCloser(bytes.NewBuffer([]byte("12")), &closer{})
+	                     ^
+utils/ioutil/context.go:81:61: `necesary` is a misspelling of `necessary` (misspell)
+// this sparingly, make sure to cancel the read or write as necesary
+                                                            ^
+utils/ioutil/common.go:174:2: naked return in func `Read` with 7 lines of code (nakedret)
+	return
+	^
+utils/ioutil/common.go:200:2: naked return in func `Write` with 7 lines of code (nakedret)
+	return
+	^
+go.mod:10:2: replacement are not allowed: github.com/go-git/gcfg (gomoddirectives)
+	github.com/go-git/gcfg => github.com/go-git/gcfg v1.5.1-0.20240812080926-1b398f6213c9
+	^
+go.mod:11:2: replacement are not allowed: github.com/go-git/go-billy/v5 (gomoddirectives)
+	github.com/go-git/go-billy/v5 => github.com/go-git/go-billy/v5 v5.0.0-20240804231525-dc481f5289ba
+	^
+go.mod:12:2: replacement are not allowed: github.com/go-git/go-git-fixtures/v5 (gomoddirectives)
+	github.com/go-git/go-git-fixtures/v5 => github.com/go-git/go-git-fixtures/v5 v5.0.0-20241203230421-0753e18f8f03
+	^
+example_test.go:59:3: exitAfterDefer: log.Fatal will exit, and `defer os.RemoveAll(dir)` will not run (gocritic)
+		log.Fatal(err)
+		^
+example_test.go:91:3: exitAfterDefer: log.Fatal will exit, and `defer os.RemoveAll(dir)` will not run (gocritic)
+		log.Fatal(err)
+		^
+example_test.go:114:3: exitAfterDefer: log.Fatal will exit, and `defer os.RemoveAll(dir)` will not run (gocritic)
+		log.Fatal(err)
+		^
+plumbing/format/index/match.go:67:23: string `windows` has 3 occurrences, make it a constant (goconst)
+			if runtime.GOOS != "windows" {
+			                   ^
+plumbing/format/index/decoder.go:156:3: redefines-builtin-id: redefinition of the built-in function len (revive)
+		len := flags & nameMask
+		^
+plumbing/format/index/decoder.go:191:35: redefines-builtin-id: redefinition of the built-in function len (revive)
+func (d *Decoder) doReadEntryName(len uint16) (string, error) {
+                                  ^
+plumbing/format/index/decoder.go:291:2: redefines-builtin-id: redefinition of the built-in function len (revive)
+	len, err := binary.ReadUint32(d.r)
+	^
+plumbing/format/index/decoder.go:19:2: DecodeVersionSupported is a global variable (gochecknoglobals)
+	DecodeVersionSupported = struct{ Min, Max uint32 }{Min: 2, Max: 4}
+	^
+plumbing/format/index/encoder.go:19:2: EncodeVersionSupported is a global variable (gochecknoglobals)
+	EncodeVersionSupported uint32 = 4
+	^
+plumbing/format/index/index.go:22:2: indexSignature is a global variable (gochecknoglobals)
+	indexSignature              = []byte{'D', 'I', 'R', 'C'}
+	^
+plumbing/format/index/index.go:23:2: treeExtSignature is a global variable (gochecknoglobals)
+	treeExtSignature            = []byte{'T', 'R', 'E', 'E'}
+	^
+plumbing/format/index/index.go:24:2: resolveUndoExtSignature is a global variable (gochecknoglobals)
+	resolveUndoExtSignature     = []byte{'R', 'E', 'U', 'C'}
+	^
+plumbing/format/index/index.go:25:2: endOfIndexEntryExtSignature is a global variable (gochecknoglobals)
+	endOfIndexEntryExtSignature = []byte{'E', 'O', 'I', 'E'}
+	^
+plumbing/format/index/decoder_test.go:99:5: expectedEntries is a global variable (gochecknoglobals)
+var expectedEntries = []TreeEntry{
+    ^
+plumbing/format/index/decoder.go:316:8: shadow: declaration of "err" shadows declaration at line 314 (govet)
+	if _, err := io.ReadFull(r, s); err != nil {
+	      ^
+plumbing/format/index/encoder.go:141:5: shadow: declaration of "err" shadows declaration at line 95 (govet)
+	if err := binary.Write(e.w, flow...); err != nil {
+	   ^
+plumbing/format/index/decoder.go:333:2: naked return in func `validateHeader` with 20 lines of code (nakedret)
+	return
+	^
+plumbing/format/index/index.go:110:2: naked return in func `Glob` with 14 lines of code (nakedret)
+	return
+	^
+plumbing/format/index/match.go:92:4: naked return in func `matchChunk` with 73 lines of code (nakedret)
+			return
+			^
+plumbing/format/index/match.go:104:5: naked return in func `matchChunk` with 73 lines of code (nakedret)
+				return
+				^
+plumbing/format/index/match.go:121:6: naked return in func `matchChunk` with 73 lines of code (nakedret)
+					return
+					^
+plumbing/format/index/match.go:126:7: naked return in func `matchChunk` with 73 lines of code (nakedret)
+						return
+						^
+plumbing/format/index/match.go:135:5: naked return in func `matchChunk` with 73 lines of code (nakedret)
+				return
+				^
+plumbing/format/index/decoder.go:382:3: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+		return nil, nil
+		^
+plumbing/format/packfile/encoder.go:91:29: Error return value of `e.selector.restoreOriginal` is not checked (errcheck)
+		e.selector.restoreOriginal(o)
+		                          ^
+plumbing/format/packfile/packfile.go:241:8: Error return value is not checked (errcheck)
+	oh := p.scanner.Data().Value().(ObjectHeader)
+	      ^
+plumbing/format/packfile/parser.go:113:14: Error return value is not checked (errcheck)
+			header := data.Value().(Header)
+			          ^
+plumbing/format/packfile/parser.go:116:14: Error return value of `p.onHeader` is not checked (errcheck)
+			p.onHeader(header.ObjectsQty)
+			          ^
+plumbing/format/packfile/parser.go:119:10: Error return value is not checked (errcheck)
+			oh := data.Value().(ObjectHeader)
+			      ^
+plumbing/format/packfile/parser.go:128:19: Error return value of `p.storeOrCache` is not checked (errcheck)
+				p.storeOrCache(&oh)
+				              ^
+plumbing/format/packfile/parser.go:132:17: Error return value is not checked (errcheck)
+			p.checksum = data.Value().(plumbing.Hash)
+			             ^
+plumbing/format/packfile/parser.go:193:21: Error return value of `oh.content.WriteTo` is not checked (errcheck)
+		oh.content.WriteTo(&deltaData)
+		                  ^
+plumbing/format/packfile/patch_delta.go:354:12: Error return value is not checked (errcheck)
+	baselr := io.LimitReader(sr, 0).(*io.LimitedReader)
+	          ^
+plumbing/format/packfile/patch_delta.go:355:13: Error return value is not checked (errcheck)
+	deltalr := io.LimitReader(deltaBuf, 0).(*io.LimitedReader)
+	           ^
+plumbing/format/packfile/scanner.go:159:22: Error return value of `r.scannerReader.Seek` is not checked (errcheck)
+	r.scannerReader.Seek(0, io.SeekStart)
+	                    ^
+plumbing/format/packfile/parser.go:127:11: superfluous-else: if block ends with a continue statement, so drop this else and outdent its block (revive)
+			} else {
+				p.storeOrCache(&oh)
+			}
+plumbing/format/packfile/delta_selector_test.go:50:17: var-declaration: should omit type []*testObject from declaration of var testObjects; it will be inferred from the right-hand side (revive)
+var testObjects []*testObject = []*testObject{{
+                ^
+plumbing/format/packfile/packfile_options.go:9:6: exported: type name will be used as packfile.PackfileOption by other packages, and that stutters; consider calling this Option (revive)
+type PackfileOption func(*Packfile)
+     ^
+plumbing/format/packfile/encoder.go:159:9: indent-error-flow: if block ends with a return statement, so drop this else and outdent its block (revive)
+	} else {
+		return e.writeOfsDeltaHeader(o)
+	}
+plumbing/format/packfile/delta_test.go:190:14: unused-parameter: parameter 't' seems to be unused, consider removing or renaming it as _ (revive)
+	f.Fuzz(func(t *testing.T, input1, input2 []byte) {
+	            ^
+plumbing/format/packfile/scanner.go:192:1: receiver-naming: receiver name s should be consistent with previous receiver name r for Scanner (revive)
+func (s *Scanner) WriteObject(oh *ObjectHeader, writer io.Writer) error {
+	if oh.content.Len() > 0 {
+		_, err := io.Copy(writer, bytes.NewReader(oh.content.Bytes()))
+		return err
+	}
+
+	// If the oh is not an external ref and we don't have the
+	// content offset, we won't be able to inflate via seeking through
+	// the packfile.
+	if oh.externalRef && oh.ContentOffset == 0 {
+		return plumbing.ErrObjectNotFound
+	}
+
+	// Not a seeker data source.
+	if s.seeker == nil {
+		return plumbing.ErrObjectNotFound
+	}
+
+	err := s.inflateContent(oh.ContentOffset, writer)
+	if err != nil {
+		return ErrReferenceDeltaNotFound
+	}
+
+	return nil
+}
+plumbing/format/packfile/scanner.go:218:1: receiver-naming: receiver name s should be consistent with previous receiver name r for Scanner (revive)
+func (s *Scanner) inflateContent(contentOffset int64, writer io.Writer) error {
+	_, err := s.scannerReader.Seek(contentOffset, io.SeekStart)
+	if err != nil {
+		return err
+	}
+
+	err = s.zr.Reset(s.scannerReader)
+	if err != nil {
+		return fmt.Errorf("zlib reset error: %s", err)
+	}
+
+	_, err = io.Copy(writer, s.zr.Reader)
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+plumbing/format/packfile/object_pack_test.go:42:29: unused-parameter: parameter 's' seems to be unused, consider removing or renaming it as _ (revive)
+func (*dummyObject) SetSize(s int64)                 {}
+                            ^
+plumbing/format/packfile/packfile.go:342:6: func `isInvalid` is unused (unused)
+func isInvalid(err error) bool {
+     ^
+plumbing/format/packfile/packfile.go:355:5: var `errInvalidUnix` is unused (unused)
+var errInvalidUnix = os.ErrInvalid.Error()
+    ^
+plumbing/format/packfile/packfile.go:353:7: const `errInvalidWindows` is unused (unused)
+const errInvalidWindows = "The parameter is incorrect."
+      ^
+plumbing/format/packfile/delta_selector.go:67:3: The copy of the 'for' variable "objs" can be deleted (Go 1.22+) (copyloopvar)
+		objs := objs
+		^
+plumbing/format/packfile/patch_delta_test.go:63:3: The copy of the 'for' variable "tc" can be deleted (Go 1.22+) (copyloopvar)
+		tc := tc
+		^
+plumbing/format/packfile/delta_test.go:6:2: import 'math/rand' is not allowed from list 'legacy': Use math/rand/v2 instead, see https://go.dev/blog/randv2 (depguard)
+	"math/rand"
+	^
+plumbing/format/packfile/parser_cache.go:39:3: golang.org/x/exp/maps.Clear() can be replaced by clear() (exptostd)
+		maps.Clear(c.oiByHash)
+		^
+plumbing/format/packfile/parser_cache.go:40:3: golang.org/x/exp/maps.Clear() can be replaced by clear() (exptostd)
+		maps.Clear(c.oiByOffset)
+		^
+plumbing/format/packfile/parser_cache.go:7:2: Import statement 'golang.org/x/exp/maps' can be replaced by 'maps' (exptostd)
+	"golang.org/x/exp/maps"
+	^
+plumbing/format/packfile/common.go:13:5: signature is a global variable (gochecknoglobals)
+var signature = []byte{'P', 'A', 'C', 'K'}
+    ^
+plumbing/format/packfile/delta_index.go:196:5: len8tab is a global variable (gochecknoglobals)
+var len8tab = [256]uint8{
+    ^
+plumbing/format/packfile/delta_index.go:243:5: T is a global variable (gochecknoglobals)
+var T = []uint32{0x00000000, 0xd4c6b32d, 0x7d4bd577,
+    ^
+plumbing/format/packfile/delta_selector.go:18:5: applyDelta is a global variable (gochecknoglobals)
+var applyDelta = map[plumbing.ObjectType]bool{
+    ^
+plumbing/format/packfile/diff_delta.go:99:3: ifElseChain: rewrite if-else to switch statement (gocritic)
+		if l == 0 {
+		^
+plumbing/format/packfile/parser.go:171:31: commentFormatting: put a space between `//` and comment text (gocritic)
+			oh.parent = &ObjectHeader{ //Placeholder parent
+			                           ^
+plumbing/format/packfile/patch_delta.go:367:3: ifElseChain: rewrite if-else to switch statement (gocritic)
+		if isCopyFromSrc(cmd) {
+		^
+plumbing/format/packfile/encoder.go:101:5: shadow: declaration of "err" shadows declaration at line 84 (govet)
+	if err := e.writeBaseIfDelta(o); err != nil {
+	   ^
+plumbing/format/packfile/encoder.go:113:6: shadow: declaration of "err" shadows declaration at line 84 (govet)
+		if err := e.writeDeltaHeader(o); err != nil {
+		   ^
+plumbing/format/packfile/encoder.go:117:6: shadow: declaration of "err" shadows declaration at line 84 (govet)
+		if err := e.entryHead(o.Type(), o.Size()); err != nil {
+		   ^
+plumbing/format/packfile/packfile.go:87:5: shadow: declaration of "err" shadows declaration at line 86 (govet)
+	if err := p.init(); err != nil {
+	   ^
+plumbing/format/packfile/patch_delta.go:368:12: shadow: declaration of "err" shadows declaration at line 359 (govet)
+			offset, err := decodeOffsetByteReader(cmd, deltaBuf)
+			        ^
+plumbing/format/packfile/patch_delta.go:396:10: shadow: declaration of "err" shadows declaration at line 359 (govet)
+			if _, err := io.CopyBuffer(mw, deltalr, buf); err != nil {
+			      ^
+plumbing/format/packfile/scanner.go:362:8: shadow: declaration of "err" shadows declaration at line 336 (govet)
+			no, err := binary.ReadVariableWidthInt(r.scannerReader)
+			    ^
+plumbing/format/packfile/scanner.go:368:9: shadow: declaration of "err" shadows declaration at line 336 (govet)
+			ref, err := binary.ReadHash(r.scannerReader)
+			     ^
+plumbing/format/packfile/scanner.go:387:7: shadow: declaration of "err" shadows declaration at line 336 (govet)
+			w, err := r.storage.RawObjectWriter(oh.Type, oh.Size)
+			   ^
+plumbing/format/packfile/fsobject.go:133:2: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+	return nil, nil
+	^
+plumbing/format/packfile/scanner.go:314:2: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+	return nil, nil
+	^
+plumbing/format/packfile/scanner.go:435:2: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+	return nil, nil
+	^
+plumbing/format/packfile/scanner.go:460:2: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+	return nil, nil
+	^
+plumbing/format/packfile/object_pack_test.go:43:56: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+func (*dummyObject) Reader() (io.ReadCloser, error)  { return nil, nil }
+                                                       ^
+plumbing/format/packfile/object_pack_test.go:44:56: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+func (*dummyObject) Writer() (io.WriteCloser, error) { return nil, nil }
+                                                       ^
+plumbing/format/packfile/scanner_test.go:205:42: SA1003: value of type int cannot be used with binary.Write (staticcheck)
+					binary.Write(buf, binary.BigEndian, -1)
+					                                    ^
+plumbing/format/packfile/scanner.go:171:19: ST1016: methods on the same type should have the same receiver name (seen 2x "s", 5x "r") (stylecheck)
+func (r *Scanner) Data() PackData {
+                  ^
+plumbing/format/packfile/parser.go:267:65: (*Parser).cacheWriter - result 1 (error) is always nil (unparam)
+func (p *Parser) cacheWriter(oh *ObjectHeader) (io.WriteCloser, error) {
+                                                                ^
+plumbing/hash/hash.go:16:1: don't use `init` function (gochecknoinits)
+func init() {
+^
+plumbing/hash/hash_test.go:44:4: ifElseChain: rewrite if-else to switch statement (gocritic)
+			if tt.wantErr == "" && err != nil {
+			^
+plumbing/object/commit_walker.go:297:7: Error return value is not checked (errcheck)
+	c := it.currCommit.Value.(*Commit)
+	     ^
+plumbing/object/commit_walker_ctime.go:37:6: Error return value is not checked (errcheck)
+		if a.(*Commit).Committer.When.Before(b.(*Commit).Committer.When) {
+		   ^
+plumbing/object/object.go:170:6: exported: type name will be used as object.ObjectIter by other packages, and that stutters; consider calling this Iter (revive)
+type ObjectIter struct {
+     ^
+plumbing/object/file_test.go:250:17: unused-parameter: parameter 'f' seems to be unused, consider removing or renaming it as _ (revive)
+	i.ForEach(func(f *File) error {
+	               ^
+plumbing/object/tree_test.go:329:3: increment-decrement: should replace i += 1 with i++ (revive)
+		i += 1
+		^
+plumbing/object/rename.go:392:1: redefines-builtin-id: redefinition of the built-in function max (revive)
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+plumbing/object/tag_test.go:165:23: unused-parameter: parameter 't' seems to be unused, consider removing or renaming it as _ (revive)
+	err = i.ForEach(func(t *Tag) error {
+	                     ^
+plumbing/object/object.go:93:2: redefines-builtin-id: redefinition of the built-in function close (revive)
+	close := bytes.LastIndexByte(b, '>')
+	^
+plumbing/object/signature_test.go:200:14: unused-parameter: parameter 't' seems to be unused, consider removing or renaming it as _ (revive)
+	f.Fuzz(func(t *testing.T, input []byte) {
+	            ^
+plumbing/object/commit.go:218:11: superfluous-else: if block ends with a continue statement, so drop this else and outdent its block (revive)
+			} else {
+				mergetag = false
+			}
+plumbing/object/rename.go:399:1: redefines-builtin-id: redefinition of the built-in function min (revive)
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+plumbing/object/rename.go:467:4: redefines-builtin-id: redefinition of the built-in function min (revive)
+			min, max := srcSize, dstSize
+			^
+plumbing/object/commit.go:228:11: superfluous-else: if block ends with a continue statement, so drop this else and outdent its block (revive)
+			} else {
+				pgpsig = false
+			}
+plumbing/object/tree_test.go:114:37: unused-parameter: parameter 'f' seems to be unused, consider removing or renaming it as _ (revive)
+	err := s.Tree.Files().ForEach(func(f *File) error {
+	                                   ^
+plumbing/object/signature_test.go:196:14: unnecessary conversion (unconvert)
+	f.Add([]byte(openPGPSignatureFormat[0]))
+	            ^
+plumbing/object/signature_test.go:197:14: unnecessary conversion (unconvert)
+	f.Add([]byte(x509SignatureFormat[0]))
+	            ^
+plumbing/object/signature_test.go:198:14: unnecessary conversion (unconvert)
+	f.Add([]byte(sshSignatureFormat[0]))
+	            ^
+plumbing/object/patch.go:300:3: ifElseChain: rewrite if-else to switch statement (gocritic)
+		if from == nil {
+		^
+plumbing/object/rename.go:87:3: ifElseChain: rewrite if-else to switch statement (gocritic)
+		if len(deleted) == 1 {
+		^
+plumbing/object/rename.go:117:3: ifElseChain: rewrite if-else to switch statement (gocritic)
+		if len(deleted) == 1 {
+		^
+plumbing/object/rename.go:678:3: ifElseChain: rewrite if-else to switch statement (gocritic)
+		if srcKey == dstKey {
+		^
+plumbing/object/tag_test.go:468:2: commentFormatting: put a space between `//` and comment text (gocritic)
+	//Similar to TestString since no signature
+	^
+plumbing/object/rename_test.go:522:10: nilness: impossible condition: non-nil == nil (govet)
+	if from == nil && to == nil {
+	        ^
+plumbing/object/commit.go:382:16: shadow: declaration of "err" shadows declaration at line 375 (govet)
+		firstParent, err := c.Parents().Next()
+		             ^
+plumbing/object/commit.go:423:5: shadow: declaration of "err" shadows declaration at line 413 (govet)
+	if err := c.EncodeWithoutSignature(encoded); err != nil {
+	   ^
+plumbing/object/tag.go:272:5: shadow: declaration of "err" shadows declaration at line 262 (govet)
+	if err := t.EncodeWithoutSignature(encoded); err != nil {
+	   ^
+plumbing/object/file_test.go:69:10: shadow: declaration of "err" shadows declaration at line 60 (govet)
+			file, err := iter.Next()
+			      ^
+plumbing/object/tree_test.go:1646:4: unusedwrite: unused write to field s (govet)
+		s:    (storer.EncodedObjectStorer)(nil),
+		 ^
+plumbing/object/tree_test.go:1647:4: unusedwrite: unused write to field m (govet)
+		m:    map[string]*TreeEntry(nil),
+		 ^
+plumbing/object/tree_test.go:536:1: Function name: TestTreeDecodeReadBug, Cyclomatic Complexity: 1, Halstead Volume: 88649.80, Maintainability Index: 0 (maintidx)
+func (s *TreeSuite) TestTreeDecodeReadBug() {
+^
+plumbing/object/commit_walker.go:242:49: addReference - result 0 (error) is always nil (unparam)
+	commitsLookup map[plumbing.Hash]*list.Element) error {
+	                                               ^
+plumbing/transport/version.go:26:26: unnecessary conversion (unconvert)
+			ver = protocol.Version(v)
+			                      ^
+plumbing/transport/version.go:42:27: unnecessary conversion (unconvert)
+				ver = protocol.Version(v)
+				                      ^
+plumbing/transport/common.go:188:6: shadow: declaration of "err" shadows declaration at line 187 (govet)
+		if err := s.handleAdvRefDecodeError(err); err != nil {
+		   ^
+plumbing/transport/common.go:223:6: shadow: declaration of "err" shadows declaration at line 205 (govet)
+		if err := s.checkNotFoundError(); err != nil {
+		   ^
+plumbing/transport/common.go:238:6: shadow: declaration of "err" shadows declaration at line 205 (govet)
+		if err := s.finish(); err != nil {
+		   ^
+plumbing/transport/common_test.go:101:2: shadow: declaration of "session" shadows declaration at line 103 (govet)
+	session := session{
+	^
+plumbing/transport/transport.go:262:10: ST1023: should omit type string from declaration; it will be inferred from the right-hand side (stylecheck)
+	var res string = u.Path
+	        ^
+utils/merkletrie/difftree.go:324:8: shadow: declaration of "err" shadows declaration at line 281 (govet)
+				if err := ii.nextBoth(); err != nil {
+				   ^
+utils/merkletrie/difftree.go:333:8: shadow: declaration of "err" shadows declaration at line 281 (govet)
+				if err := ii.nextBoth(); err != nil {
+				   ^
+plumbing/server/serve.go:28:5: shadow: declaration of "err" shadows declaration at line 20 (govet)
+	if err := ar.Encode(cmd.Stdout); err != nil {
+	   ^
+plumbing/server/serve.go:33:5: shadow: declaration of "err" shadows declaration at line 20 (govet)
+	if err := req.Decode(cmd.Stdin); err != nil {
+	   ^
+plumbing/server/serve.go:52:5: shadow: declaration of "err" shadows declaration at line 47 (govet)
+	if err := ar.Encode(cmd.Stdout); err != nil {
+	   ^
+plumbing/server/serve.go:57:5: shadow: declaration of "err" shadows declaration at line 47 (govet)
+	if err := req.Decode(cmd.Stdin); err != nil {
+	   ^
+plumbing/server/server.go:414:4: error is not nil (line 413) but it returns nil (nilerr)
+			return nil
+			^
+plumbing/transport/git/common.go:14:1: don't use `init` function (gochecknoinits)
+func init() {
+^
+plumbing/transport/git/common.go:88:2: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+	return nil, nil
+	^
+plumbing/transport/http/transport.go:22:18: func `(*client).removeTransport` is unused (unused)
+func (c *client) removeTransport(opts transportOptions) {
+                 ^
+plumbing/transport/http/receive_pack.go:47:25: response body must be closed (bodyclose)
+	res, err := s.doRequest(ctx, http.MethodPost, url, buf)
+	                       ^
+plumbing/transport/http/upload_pack.go:62:25: response body must be closed (bodyclose)
+	res, err := s.doRequest(ctx, http.MethodPost, url, content)
+	                       ^
+plumbing/transport/http/common.go:412:6: the error type name `Err` should conform to the `XxxError` format (errname)
+type Err struct {
+     ^
+plumbing/transport/http/common.go:25:1: don't use `init` function (gochecknoinits)
+func init() {
+^
+plumbing/transport/http/receive_pack.go:54:3: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+		return nil, nil
+		^
+plumbing/transport/http/common.go:53:29: should rewrite http.NewRequestWithContext or add (*Request).WithContext (noctx)
+	req, err := http.NewRequest(http.MethodGet, url, nil)
+	                           ^
+plumbing/transport/http/receive_pack.go:91:29: should rewrite http.NewRequestWithContext or add (*Request).WithContext (noctx)
+	req, err := http.NewRequest(method, url, body)
+	                           ^
+plumbing/transport/http/upload_pack.go:93:29: should rewrite http.NewRequestWithContext or add (*Request).WithContext (noctx)
+	req, err := http.NewRequest(method, url, body)
+	                           ^
+plumbing/transport/http/common_test.go:67:30: "GET" can be replaced by http.MethodGet (usestdlibvars)
+	req, err := http.NewRequest("GET", "https://github.com/git-fixtures/basic", nil)
+	                            ^
+plumbing/transport/http/common_test.go:98:15: "500" can be replaced by http.StatusInternalServerError (usestdlibvars)
+		StatusCode: 500,
+		            ^
+plumbing/transport/http/common_test.go:168:28: "GET" can be replaced by http.MethodGet (usestdlibvars)
+	req, _ := http.NewRequest("GET", "foo", nil)
+	                          ^
+storage/filesystem/object.go:510:15: SA1019: p.Scanner is deprecated: this will be removed in future versions of the packfile package to avoid exposing the package internals and to improve its thread-safety. (staticcheck)
+	scan, err := p.Scanner()
+	             ^
+storage/filesystem/dotgit/dotgit.go:1157:17: Error return value of `f.Unlock` is not checked (errcheck)
+		defer f.Unlock()
+		              ^
+storage/filesystem/dotgit/dotgit.go:1153:21: string `windows` has 4 occurrences, make it a constant (goconst)
+	if runtime.GOOS != "windows" {
+	                   ^
+storage/filesystem/dotgit/dotgit.go:207:4: return both a `nil` error and an invalid value: use a sentinel error instead (nilnil)
+			return nil, nil
+			^
+storage/filesystem/dotgit/dotgit.go:1027:36: `(*DotGit).readReferenceFile` - `path` always receives `"."` (unparam)
+func (d *DotGit) readReferenceFile(path, name string) (ref *plumbing.Reference, err error) {
+                                   ^
+utils/binary/read_test.go:37:9: avoid allocations with bytes.NewBufferString (mirror)
+	buf := bytes.NewBuffer([]byte("foo bar"))
+	       ^
+utils/binary/read_test.go:46:25: avoid allocations with bytes.NewBufferString (mirror)
+	buf := bufio.NewReader(bytes.NewBuffer([]byte("foo bar")))
+	                       ^
+plumbing/cache/object_test.go:129:21: fmt.Sprint can be replaced with faster strconv.Itoa (perfsprint)
+				o.Put(newObject(fmt.Sprint(i), FileSize(i)))
+				                ^
+plumbing/cache/object_test.go:141:28: fmt.Sprint can be replaced with faster strconv.Itoa (perfsprint)
+				o.Get(plumbing.NewHash(fmt.Sprint(i)))
+				                       ^
+utils/merkletrie/difftree_test.go:171:47: newChangesFromString - result 1 (error) is always nil (unparam)
+func newChangesFromString(s string) (changes, error) {
+                                              ^
+utils/merkletrie/iter_test.go:445:43: `find` - `name` always receives `"z"` (unparam)
+func find(t *testing.T, tree noder.Noder, name string) noder.Path {
+                                          ^
+utils/merkletrie/internal/frame/frame_test.go:21:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := fsnoder.New("A()")
+	^
+utils/merkletrie/internal/fsnoder/dir_test.go:226:2: captLocal: `E' should not be capitalized (gocritic)
+	E, err := newDir("e", []noder.Noder{e1})
+	^
+utils/merkletrie/internal/fsnoder/dir_test.go:233:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("a", nil)
+	^
+utils/merkletrie/internal/fsnoder/dir_test.go:235:2: captLocal: `B' should not be capitalized (gocritic)
+	B, err := newDir("b", nil)
+	^
+utils/merkletrie/internal/fsnoder/dir_test.go:239:2: captLocal: `X' should not be capitalized (gocritic)
+	X, err := newDir("x", []noder.Noder{a1})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:177:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("A", nil)
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:190:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("A", []noder.Noder{a})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:203:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("A", []noder.Noder{f})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:216:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("A", []noder.Noder{a1})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:229:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("A", []noder.Noder{a1})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:242:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("A", []noder.Noder{a1})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:253:2: captLocal: `A2' should not be capitalized (gocritic)
+	A2, err := newDir("A", nil)
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:255:2: captLocal: `A1' should not be capitalized (gocritic)
+	A1, err := newDir("A", []noder.Noder{A2})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:266:2: captLocal: `B' should not be capitalized (gocritic)
+	B, err := newDir("B", nil)
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:268:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("A", []noder.Noder{B})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:283:2: captLocal: `A' should not be capitalized (gocritic)
+	A, err := newDir("A", []noder.Noder{b2, a1})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:307:2: captLocal: `E' should not be capitalized (gocritic)
+	E, err := newDir("e", []noder.Noder{e1})
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:316:2: captLocal: `B' should not be capitalized (gocritic)
+	B, err := newDir("b", nil)
+	^
+utils/merkletrie/internal/fsnoder/new_test.go:320:2: captLocal: `X' should not be capitalized (gocritic)
+	X, err := newDir("x", []noder.Noder{a1})
+	^
+repository.go:1898:14: Error return value of `iter.ForEach` is not checked (errcheck)
+	iter.ForEach(func(obj plumbing.EncodedObject) error {
+	            ^
+worktree.go:521:22: string `windows` has 5 occurrences, make it a constant (goconst)
+		if runtime.GOOS == "windows" {
+		                   ^
+worktree.go:545:1: don't use `init` function (gochecknoinits)
+func init() {
+^
+worktree_bsd.go:12:1: don't use `init` function (gochecknoinits)
+func init() {
+^
+remote.go:814:39: wrapperFunc: use strings.ReplaceAll method in `strings.Replace(localRef.Name().String(), "refs/heads/", "", -1)` (gocritic)
+		plumbing.ReferenceName(remotePrefix+strings.Replace(localRef.Name().String(), "refs/heads/", "", -1)))
+		                                    ^
+worktree.go:974:10: elseif: can replace 'else {if cond {}}' with 'else if cond {}' (gocritic)
+		} else {
+		       ^
+worktree_commit_test.go:630:17: S1025: the argument's underlying type is a slice of bytes, should use a simple conversion instead of fmt.Sprintf (gosimple)
+	s.NoError(err, fmt.Sprintf("%s", buf.Bytes()))
+	               ^
+blame.go:244:3: ineffectual assignment to curItems (ineffassign)
+		curItems = nil // free the memory
+		^
+blame.go:177:1: Function name: addBlames, Cyclomatic Complexity: 39, Halstead Volume: 4693.26, Maintainability Index: 19 (maintidx)
+func (b *blame) addBlames(curItems []*queueItem) (bool, error) {
+^
+worktree_test.go:3207:71: `exsiting` is a misspelling of `existing` (misspell)
+	// Touch of bunch of files including create a new file and delete an exsiting file
+	                                                                     ^
+prune.go:57:5: error is not nil (line 55) but it returns nil (nilerr)
+				return nil
+				^
+worktree.go:576:3: error is not nil (line 574) but it returns nil (nilerr)
+		return nil
+		^
+blame.go:146:70: newLines - result 1 (error) is always nil (unparam)
+func newLines(contents []string, commits []*object.Commit) ([]*Line, error) {
+                                                                     ^
+remote.go:887:3: getHavesFromRef - result 0 (error) is always nil (unparam)
+) error {
+  ^
+worktree_commit.go:217:60: (*buildTreeHelper).commitIndexEntry - result 0 (error) is always nil (unparam)
+func (h *buildTreeHelper) commitIndexEntry(e *index.Entry) error {
+                                                           ^
+worktree_test.go:1032:2: assigned to status, but reassigned without using the value (wastedassign)
+	status = nil
+	^
+worktree_test.go:1040:2: assigned to status, but reassigned without using the value (wastedassign)
+	status = nil
+	^
+internal/revision/parser.go:15:6: the error type name `ErrInvalidRevision` should conform to the `XxxError` format (errname)
+type ErrInvalidRevision struct {
+     ^
+internal/revision/scanner_test.go:91:46: ST1018: string literal contains the Unicode control character U+0001, consider using the '\x01' escape sequence instead (stylecheck)
+	scanner := newScanner(bytes.NewBufferString(""))
+	                                            ^
+storage/tests/storage_test.go:416:6: TestCheckAndSetReferenceError's subtests should call t.Parallel (tparallel)
+func TestCheckAndSetReferenceError(t *testing.T) {
+     ^
+storage/tests/storage_test.go:523:6: TestSetConfigAndConfig's subtests should call t.Parallel (tparallel)
+func TestSetConfigAndConfig(t *testing.T) {
+     ^
+storage/tests/storage_test.go:586:6: TestModule's subtests should call t.Parallel (tparallel)
+func TestModule(t *testing.T) {
+     ^
+storage/tests/storage_test.go:312:6: TestObjectStorerTxGetObjectNotFound's subtests should call t.Parallel (tparallel)
+func TestObjectStorerTxGetObjectNotFound(t *testing.T) {
+     ^
+storage/tests/storage_test.go:374:6: TestCheckAndSetReference's subtests should call t.Parallel (tparallel)
+func TestCheckAndSetReference(t *testing.T) {
+     ^
+storage/tests/storage_test.go:395:6: TestCheckAndSetReferenceNil's subtests should call t.Parallel (tparallel)
+func TestCheckAndSetReferenceNil(t *testing.T) {
+     ^
+storage/tests/storage_test.go:437:6: TestRemoveReference's subtests should call t.Parallel (tparallel)
+func TestRemoveReference(t *testing.T) {
+     ^
+storage/tests/storage_test.go:454:6: TestRemoveReferenceNonExistent's subtests should call t.Parallel (tparallel)
+func TestRemoveReferenceNonExistent(t *testing.T) {
+     ^
+storage/tests/storage_test.go:482:6: TestIterReferences's subtests should call t.Parallel (tparallel)
+func TestIterReferences(t *testing.T) {
+     ^
+storage/tests/storage_test.go:558:6: TestSetIndexAndIndex's subtests should call t.Parallel (tparallel)
+func TestSetIndexAndIndex(t *testing.T) {
+     ^
+storage/tests/storage_test.go:574:6: TestSetConfigInvalid's subtests should call t.Parallel (tparallel)
+func TestSetConfigInvalid(t *testing.T) {
+     ^
+storage/tests/storage_test.go:161:6: TestSetEncodedObjectAndEncodedObject's subtests should call t.Parallel (tparallel)
+func TestSetEncodedObjectAndEncodedObject(t *testing.T) {
+     ^
+storage/tests/storage_test.go:205:6: TestIterEncodedObjects's subtests should call t.Parallel (tparallel)
+func TestIterEncodedObjects(t *testing.T) {
+     ^
+storage/tests/storage_test.go:290:6: TestObjectStorerTxSetObjectAndGetObject's subtests should call t.Parallel (tparallel)
+func TestObjectStorerTxSetObjectAndGetObject(t *testing.T) {
+     ^
+storage/tests/storage_test.go:328:6: TestObjectStorerTxSetObjectAndRollback's subtests should call t.Parallel (tparallel)
+func TestObjectStorerTxSetObjectAndRollback(t *testing.T) {
+     ^
+storage/tests/storage_test.go:504:6: TestSetShallowAndShallow's subtests should call t.Parallel (tparallel)
+func TestSetShallowAndShallow(t *testing.T) {
+     ^
+storage/tests/storage_test.go:122:6: TestDeltaObjectStorer's subtests should call t.Parallel (tparallel)
+func TestDeltaObjectStorer(t *testing.T) {
+     ^
+storage/tests/storage_test.go:354:6: TestSetReferenceAndGetReference's subtests should call t.Parallel (tparallel)
+func TestSetReferenceAndGetReference(t *testing.T) {
+     ^
+storage/tests/storage_test.go:472:6: TestGetReferenceNotFound's subtests should call t.Parallel (tparallel)
+func TestGetReferenceNotFound(t *testing.T) {
+     ^
+storage/tests/storage_test.go:545:6: TestIndex's subtests should call t.Parallel (tparallel)
+func TestIndex(t *testing.T) {
+     ^
+storage/tests/storage_test.go:89:6: TestPackfileWriter's subtests should call t.Parallel (tparallel)
+func TestPackfileWriter(t *testing.T) {
+     ^
+storage/tests/storage_test.go:193:6: TestSetEncodedObjectInvalid's subtests should call t.Parallel (tparallel)
+func TestSetEncodedObjectInvalid(t *testing.T) {
+     ^
+storage/tests/storage_test.go:253:6: TestObjectStorerTxSetEncodedObjectAndCommit's subtests should call t.Parallel (tparallel)
+func TestObjectStorerTxSetEncodedObjectAndCommit(t *testing.T) {
+     ^
+config/branch.go:51:15: string `true` has 3 occurrences, make it a constant (goconst)
+		b.Rebase != "true" &&
+		            ^
+config/config.go:478:23: fmt.Sprintf can be replaced with faster strconv.FormatBool (perfsprint)
+	s.SetOption(bareKey, fmt.Sprintf("%t", c.Core.IsBare))
+	                     ^
+config/config.go:529:26: fmt.Sprintf can be replaced with faster strconv.FormatUint (perfsprint)
+		s.SetOption(windowKey, fmt.Sprintf("%d", c.Pack.Window))
+		                       ^
+storage/transactional/storage_test.go:45:2: S1021: should merge variable declaration with assignment on next line (gosimple)
+	var temporal storage.Storer
+	^
+utils/trace/trace.go:11:1: don't use `init` function (gochecknoinits)
+func init() {
+^
+plumbing/storer/object.go:12:2: commentFormatting: put a space between `//` and comment text (gocritic)
+	//ErrStop is used to stop a ForEach function in an Iter
+	^
+utils/merkletrie/filesystem/node.go:161:12: appendAssign: append result not assigned to the same slice (gocritic)
+		n.hash = append(submoduleHash[:], filemode.Submodule.Bytes()...)
+		         ^
+utils/merkletrie/filesystem/node.go:170:11: appendAssign: append result not assigned to the same slice (gocritic)
+	n.hash = append(hash[:], mode.Bytes()...)
+	         ^
+utils/merkletrie/filesystem/node.go:130:55: (*node).newChildNode - result 1 (error) is always nil (unparam)
+func (n *node) newChildNode(file os.FileInfo) (*node, error) {
+                                                      ^
+utils/sync/bytes_test.go:37:13: SA5011: possible nil pointer dereference (staticcheck)
+	got := len(*slice)
+	           ^
+utils/sync/bytes_test.go:32:5: SA5011(related information): this check suggests that the pointer can be nil (staticcheck)
+	if slice == nil {
+	   ^
+utils/sync/zlib.go:70:17: SA6002: argument should be pointer-like to avoid allocations (staticcheck)
+	zlibReader.Put(z)
+	               ^
+internal/transport/ssh/test/test_utils.go:28:10: Error return value of `io.Copy` is not checked (errcheck)
+		io.Copy(stdin, s)
+		       ^
+internal/transport/ssh/test/test_utils.go:36:10: Error return value of `io.Copy` is not checked (errcheck)
+		io.Copy(s.Stderr(), stderr)
+		       ^
+internal/transport/ssh/test/test_utils.go:41:10: Error return value of `io.Copy` is not checked (errcheck)
+		io.Copy(s, stdout)
+		       ^
+internal/transport/ssh/test/proxy_test.go:69:2: reassigning variable DefaultAuthBuilder in other package ggssh (reassign)
+	ggssh.DefaultAuthBuilder = func(user string) (ggssh.AuthMethod, error) {
+	^
+plumbing/reference.go:298:2: assigned to ref, but reassigned without using the value (wastedassign)
+	ref := ""
+	^
+plumbing/format/packfile/packfile_test.go:104:3: The copy of the 'for' variable "f" can be deleted (Go 1.22+) (copyloopvar)
+		f := f
+		^
+plumbing/format/packfile/packfile_test.go:112:4: The copy of the 'for' variable "h" can be deleted (Go 1.22+) (copyloopvar)
+			h := h
+			^
+plumbing/format/packfile/packfile_test.go:165:3: The copy of the 'for' variable "f" can be deleted (Go 1.22+) (copyloopvar)
+		f := f
+		^
+plumbing/format/packfile/packfile_test.go:167:4: The copy of the 'for' variable "typ" can be deleted (Go 1.22+) (copyloopvar)
+			typ := typ
+			^
+plumbing/format/packfile/encoder_advanced_test.go:6:2: import 'math/rand' is not allowed from list 'legacy': Use math/rand/v2 instead, see https://go.dev/blog/randv2 (depguard)
+	"math/rand"
+	^
+➜  ~/Workspace/kuknitin/go-git git:(golangci_lint) ✗ [9:02:54]
