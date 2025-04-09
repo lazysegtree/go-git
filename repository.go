@@ -101,9 +101,12 @@ func InitWithOptions(s storage.Storer, worktree billy.Filesystem, options InitOp
 		options.DefaultBranch = plumbing.Master
 	}
 
+	fmt.Printf("[LST] InitWithOptions(), branch : %v\n", options.DefaultBranch)
+
 	if err := options.DefaultBranch.Validate(); err != nil {
 		return nil, err
 	}
+
 
 	r := newRepository(s, worktree)
 	_, err := r.Reference(plumbing.HEAD, false)
@@ -262,7 +265,7 @@ func PlainInitWithOptions(path string, opts *PlainInitOptions) (*Repository, err
 	if opts == nil {
 		opts = &PlainInitOptions{}
 	}
-
+	fmt.Printf("[LST] path : %v, branch : %v\n", path, opts.DefaultBranch.String())
 	var wt, dot billy.Filesystem
 
 	if opts.Bare {
@@ -271,7 +274,10 @@ func PlainInitWithOptions(path string, opts *PlainInitOptions) (*Repository, err
 		wt = osfs.New(path, osfs.WithBoundOS())
 		dot, _ = wt.Chroot(GitDirName)
 	}
+	_, statErr := dot.Stat(dot.Root())
+	fmt.Printf("[LST] dot : %v, statErr : %v\n", dot.Root(), statErr)
 
+	// What is this ?
 	s := filesystem.NewStorage(dot, cache.NewObjectLRUDefault())
 
 	r, err := InitWithOptions(s, wt, opts.InitOptions)
@@ -285,6 +291,7 @@ func PlainInitWithOptions(path string, opts *PlainInitOptions) (*Repository, err
 	}
 
 	if opts.ObjectFormat != "" {
+		// Question : Shouldn't this return be even before repository is initialized ?
 		if opts.ObjectFormat == formatcfg.SHA256 && hash.CryptoType != crypto.SHA256 {
 			return nil, ErrSHA256NotSupported
 		}
@@ -466,6 +473,7 @@ func dotGitCommonDirectory(fs billy.Filesystem) (commonDir billy.Filesystem, err
 //
 // TODO(mcuadros): move isBare to CloneOptions in v5
 func PlainClone(path string, isBare bool, o *CloneOptions) (*Repository, error) {
+	fmt.Printf("[LST] Starting PlainClone\n")
 	return PlainCloneContext(context.Background(), path, isBare, o)
 }
 
@@ -486,10 +494,12 @@ func PlainCloneContext(ctx context.Context, path string, isBare bool, o *CloneOp
 		if o != nil {
 			url = o.URL
 		}
+		fmt.Printf("[LST] performance: %.9f s: git command: git clone %s\n", time.Since(start).Seconds(), url)
 		trace.Performance.Printf("performance: %.9f s: git command: git clone %s", time.Since(start).Seconds(), url)
 	}()
 
 	cleanup, cleanupParent, err := checkIfCleanupIsNeeded(path)
+	fmt.Printf("[LST] cleanup %v, cleanupParent %v, err %v\n", cleanup, cleanupParent, err)
 	if err != nil {
 		return nil, err
 	}
