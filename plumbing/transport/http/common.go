@@ -331,7 +331,6 @@ func (s *HTTPSession) Handshake(ctx context.Context, service transport.Service, 
 	if !s.useDumb {
 		url += "?service=" + service.String()
 	}
-
 	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
 	if err != nil {
 		return nil, err
@@ -342,6 +341,7 @@ func (s *HTTPSession) Handshake(ctx context.Context, service transport.Service, 
 	}
 
 	applyHeaders(req, service.String(), s.ep, s.auth, s.gitProtocol, !s.useDumb)
+	fmt.Printf("[LST] Handshaking with HTTP session, req : %v\n", req)
 	res, err := doRequest(s.client, req)
 	if err != nil {
 		return nil, err
@@ -476,6 +476,7 @@ func (s *HTTPSession) Fetch(ctx context.Context, req *transport.FetchRequest) (e
 
 // GetRemoteRefs implements transport.Connection.
 func (s *HTTPSession) GetRemoteRefs(ctx context.Context) ([]*plumbing.Reference, error) {
+	fmt.Printf("[LST] Getting remote refs from HTTP session, s.refs : %v\n", s.refs)
 	if s.refs == nil {
 		return nil, transport.ErrEmptyRemoteRepository
 	}

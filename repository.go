@@ -107,9 +107,13 @@ func InitWithOptions(s storage.Storer, worktree billy.Filesystem, options InitOp
 		return nil, err
 	}
 
-
 	r := newRepository(s, worktree)
-	_, err := r.Reference(plumbing.HEAD, false)
+	ref, err := r.Reference(plumbing.HEAD, false)
+	if ref != nil {
+		fmt.Printf("[LST] New repository object r, Ref : %v, ref name : %v\n", ref.String(), ref.Name())
+	} else {
+		fmt.Printf("[LST] New repository object r, ref is nil \n")
+	}
 	switch err {
 	case plumbing.ErrReferenceNotFound:
 	case nil:
@@ -292,6 +296,7 @@ func PlainInitWithOptions(path string, opts *PlainInitOptions) (*Repository, err
 
 	if opts.ObjectFormat != "" {
 		// Question : Shouldn't this return be even before repository is initialized ?
+		// Answer is yes : https://discord.com/channels/1323219975191662706/1359364950740439210/1359428707072082012
 		if opts.ObjectFormat == formatcfg.SHA256 && hash.CryptoType != crypto.SHA256 {
 			return nil, ErrSHA256NotSupported
 		}
@@ -669,6 +674,7 @@ func (r *Repository) CreateRemote(c *config.RemoteConfig) (*Remote, error) {
 		return nil, ErrRemoteExists
 	}
 
+	fmt.Printf("[LST] Added new remote with name : %s, config : %v\n", c.Name, c)
 	cfg.Remotes[c.Name] = c
 	return remote, r.Storer.SetConfig(cfg)
 }

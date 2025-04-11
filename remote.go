@@ -381,12 +381,17 @@ func (r *Remote) fetch(ctx context.Context, o *FetchOptions) (sto storer.Referen
 		o.RemoteURL = r.c.URLs[0]
 	}
 
+	fmt.Printf("[LST] Fetching from remote URL: %s, RefSpecs: %v\n", o.RemoteURL, o.RefSpecs)
+
 	c, ep, err := newClient(o.RemoteURL, o.InsecureSkipTLS, o.CABundle, o.ProxyOptions)
 	if err != nil {
 		return nil, err
 	}
 
+	fmt.Printf("[LST] Created new client with endpoint: %v, supported protocols: %v\n", ep, c.SupportedProtocols())
+
 	sess, err := c.NewSession(r.s, ep, o.Auth)
+
 	if err != nil {
 		return nil, err
 	}
@@ -396,6 +401,8 @@ func (r *Remote) fetch(ctx context.Context, o *FetchOptions) (sto storer.Referen
 		return nil, err
 	}
 
+	fmt.Printf("[LST] Handshake successful, server version: %v\n", conn.Version())
+
 	if err := r.isSupportedRefSpec(o.RefSpecs, conn.Capabilities()); err != nil {
 		return nil, err
 	}
@@ -403,6 +410,10 @@ func (r *Remote) fetch(ctx context.Context, o *FetchOptions) (sto storer.Referen
 	rRefs, err := conn.GetRemoteRefs(ctx)
 	if err != nil {
 		return nil, err
+	}
+
+	for _, ref := range rRefs {
+		fmt.Printf("[LST] Fetched ref from remote(name : %s, hash : %s, target : %s)\n", ref.Name(), ref.Hash(), ref.Target())
 	}
 
 	remoteRefs := referenceStorageFromRefs(rRefs, true)
@@ -540,6 +551,7 @@ func newClient(url string, insecure bool, cabundle []byte, proxyOpts transport.P
 	ep.CaBundle = cabundle
 	ep.Proxy = proxyOpts
 
+	fmt.Printf("[LST] Creating new client with protocol: %s\n", ep.Protocol)
 	c, err := transport.Get(ep.Protocol)
 	if err != nil {
 		return nil, nil, err

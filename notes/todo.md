@@ -5,7 +5,8 @@
 
 # Work-stream 
 - [ ] Transport package unit tests
-
+- [ ] Fix PlainInitWithOptions()
+- [ ] 
 
 
 

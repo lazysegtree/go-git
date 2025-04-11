@@ -3,8 +3,8 @@ package main
 import (
 	"os"
 )
-import "github.com/go-git/go-git/v5"
-import . "github.com/go-git/go-git/v5/_examples"
+import "github.com/go-git/go-git/v6"
+import . "github.com/go-git/go-git/v6/_examples"
 
 func main() {
 	CheckArgs("<url>")
@@ -19,7 +19,7 @@ func main() {
 	//
 	//CheckIfError(err)
 
-	repo, err := git.PlainClone(dir, false, &git.CloneOptions{URL: url})
+	repo, err := git.PlainClone(dir, &git.CloneOptions{URL: url})
 	CheckIfError(err)
 
 	remotes, err := repo.Remotes()
