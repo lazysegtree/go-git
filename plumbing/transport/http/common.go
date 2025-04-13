@@ -347,17 +347,21 @@ func (s *HTTPSession) Handshake(ctx context.Context, service transport.Service, 
 		return nil, err
 	}
 
+	fmt.Printf("[LST] Handshaking with HTTP session, status code : %v\n", res.StatusCode)
+
 	if contentType := res.Header.Get("Content-Type"); !s.useDumb {
 		s.isSmart = contentType == fmt.Sprintf("application/x-%s-advertisement", service)
 	}
-
+	fmt.Printf("[LST] before modifyRedirect ep : %v\n", s.ep)
 	modifyRedirect(res, s.ep)
+	fmt.Printf("[LST] after modifyRedirect ep : %v\n", s.ep)
 	defer ioutil.CheckClose(res.Body, &err)
-
 	rd := bufio.NewReader(res.Body)
 	ar := packp.NewAdvRefs()
+	fmt.Printf("[LST] before decoding, ar : %v, s.IsSmart() : %v\n", ar, s.IsSmart())
 	if s.IsSmart() {
 		_, prefix, err := pktline.PeekLine(rd)
+		fmt.Printf("[LST] read line %q\n", string(prefix))
 		if err != nil {
 			return nil, err
 		}
@@ -371,13 +375,14 @@ func (s *HTTPSession) Handshake(ctx context.Context, service transport.Service, 
 			if err != nil {
 				return nil, err
 			}
-
+			fmt.Printf("[LST] reply : %v\n", reply)
 			if reply.Service != service.String() {
 				return nil, fmt.Errorf("unexpected service name: %w", transport.ErrInvalidResponse)
 			}
 		}
 
 		s.version, _ = transport.DiscoverVersion(rd)
+		fmt.Printf("[LST] s.version : %v\n", s.version)
 		switch s.version {
 		case protocol.V2:
 			return nil, transport.ErrUnsupportedVersion
@@ -394,6 +399,7 @@ func (s *HTTPSession) Handshake(ctx context.Context, service transport.Service, 
 
 			return nil, err
 		}
+		fmt.Printf("[LST] after decoding, ar : %v\n", ar)
 	} else {
 		var infoRefs packp.InfoRefs
 		if err := infoRefs.Decode(rd); err != nil {
@@ -456,6 +462,7 @@ func (s *HTTPSession) Fetch(ctx context.Context, req *transport.FetchRequest) (e
 	if !s.IsSmart() {
 		return s.fetchDumb(ctx, req)
 	}
+	fmt.Printf("[LST] Fetching with HTTP session, req : %v\n", req)
 
 	rwc := newRequester(ctx, s, transport.UploadPackService)
 

@@ -10,19 +10,20 @@
 - [ ] 
 
 # Learning Part 1
-- [ ] Full walkthrough of Clone functionality with logs, etc. 
-  - Init -> Create Remote -> Create Client -> Create session 
+- [x] Basic walkthrough of Clone functionality with logs, etc. 
+  - Init -> Create Remote -> Create Client -> Create session -> Fetch references -> Fetch actual objects 
 
 # Learning Part 2
 
 - [x] Custom logs at some places
-- [ ] Perform some plumbing operations using git
-- [ ] Understand the various directories and content of .git directory
+- [x] Perform some plumbing operations using git commands
+- [x] Understand the various directories and content of .git directory
 
 # Questions part 1
-- [ ] What is the concept of work tree ? What is the difference between working tree and what is actually visible to me when I do ls ?
-- [ ] "git add command adds file contents to the index" What is index here ?
-- [ ] Understand refs, objects, packs, index, worktree, packfile pack protocol, sideband packets ?
+- [x] What is the concept of work tree ? What is the difference between working tree and what is actually visible to me when I do ls ?
+- [x] "git add command adds file contents to the index" What is index here ?
+- [ ] Understand refs, objects, packs, index, worktree . 
+- [ ] What is packfile pack protocol, sideband packets ?
 - [ ] What is bare clone ?
 
 

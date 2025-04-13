@@ -23,6 +23,7 @@ import (
 	"github.com/go-git/go-git/v6/plumbing/revlist"
 	"github.com/go-git/go-git/v6/plumbing/storer"
 	"github.com/go-git/go-git/v6/plumbing/transport"
+	"github.com/go-git/go-git/v6/plumbing/transport/http"
 	"github.com/go-git/go-git/v6/storage"
 	"github.com/go-git/go-git/v6/storage/filesystem"
 	"github.com/go-git/go-git/v6/storage/memory"
@@ -401,7 +402,9 @@ func (r *Remote) fetch(ctx context.Context, o *FetchOptions) (sto storer.Referen
 		return nil, err
 	}
 
-	fmt.Printf("[LST] Handshake successful, server version: %v\n", conn.Version())
+	if connH, ok := conn.(*http.HTTPSession); ok {
+		fmt.Printf("[LST] Handshake with HTTP session, server version: %v\n", connH.Version())
+	}
 
 	if err := r.isSupportedRefSpec(o.RefSpecs, conn.Capabilities()); err != nil {
 		return nil, err

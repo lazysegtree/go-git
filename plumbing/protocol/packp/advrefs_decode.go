@@ -6,6 +6,8 @@ import (
 	"errors"
 	"fmt"
 	"io"
+	"reflect"
+	"runtime"
 
 	"github.com/go-git/go-git/v6/plumbing"
 	"github.com/go-git/go-git/v6/plumbing/format/pktline"
@@ -45,6 +47,7 @@ func (d *advRefsDecoder) Decode(v *AdvRefs) error {
 	d.data = v
 
 	for state := decodeFirstHash; state != nil; {
+		fmt.Printf("[LST] state function: %s\n", runtime.FuncForPC(reflect.ValueOf(state).Pointer()).Name())
 		state = state(d)
 	}
 
@@ -99,6 +102,7 @@ func decodeFirstHash(p *advRefsDecoder) decoderStateFn {
 	if ok := p.nextLine(); !ok {
 		return nil
 	}
+	fmt.Printf("[LST] decodeFirstHash, p.line : %v\n", string(p.line))
 
 	// If the repository is empty, we receive a flush here (HTTP).
 	if isFlush(p.line) {
@@ -145,6 +149,7 @@ func decodeSkipNoRefs(p *advRefsDecoder) decoderStateFn {
 
 // decode the refname, expects SP refname NULL
 func decodeFirstRef(l *advRefsDecoder) decoderStateFn {
+	fmt.Printf("[LST] decodeFirstRef, l.line : %v\n", string(l.line))
 	if len(l.line) < 3 {
 		l.error("line too short after hash")
 		return nil
@@ -174,6 +179,7 @@ func decodeFirstRef(l *advRefsDecoder) decoderStateFn {
 }
 
 func decodeCaps(p *advRefsDecoder) decoderStateFn {
+	fmt.Printf("[LST] decodeCaps, p.line : %v\n", string(p.line))
 	if err := p.data.Capabilities.Decode(p.line); err != nil {
 		p.error("invalid capabilities: %s", err)
 		return nil
@@ -188,7 +194,7 @@ func decodeOtherRefs(p *advRefsDecoder) decoderStateFn {
 	if ok := p.nextLine(); !ok {
 		return nil
 	}
-
+	fmt.Printf("[LST] decodeOtherRefs, p.line : %v\n", string(p.line))
 	if bytes.HasPrefix(p.line, shallow) {
 		return decodeShallow
 	}
