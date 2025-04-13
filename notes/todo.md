@@ -4,7 +4,7 @@
 - [x] Understand how logging works.
 
 # Work-stream 
-- [ ] Finish Learning Part 1 and Part 2, and Questions Part 1
+- [x] Finish Learning Part 1 and Part 2, and Questions Part 1
 - [ ] Transport package unit tests
 - [ ] Fix PlainInitWithOptions()
 - [ ] 
@@ -22,9 +22,9 @@
 # Questions part 1
 - [x] What is the concept of work tree ? What is the difference between working tree and what is actually visible to me when I do ls ?
 - [x] "git add command adds file contents to the index" What is index here ?
-- [ ] Understand refs, objects, packs, index, worktree . 
-- [ ] What is packfile pack protocol, sideband packets ?
-- [ ] What is bare clone ?
+- [x] Understand refs, objects, packs, index, worktree . 
+- [x] Basics of packfile pack protocol, sideband packets ?
+- [x] What is bare clone ?
 
 
 # Questions part 2
